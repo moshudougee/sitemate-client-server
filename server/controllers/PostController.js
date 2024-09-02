@@ -21,7 +21,7 @@ export const getPostById = async (req, res) => {
 export const savePost = async (req, res) => {
     const post = new Post(req.body);
     try {
-        const insertedpost = await Post.save();
+        const insertedpost = await post.save();
         res.status(201).json(insertedpost);
     } catch (error) {
         res.status(400).json({message: error.message});
